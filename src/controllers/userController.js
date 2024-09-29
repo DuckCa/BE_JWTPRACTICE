@@ -15,7 +15,11 @@ const handleLogin = async (req, res) => {
   return res.status(200).json(data);
 };
 const getUser = async (req, res) => {
-  const data = await getUserService();
   return res.status(200).json(data);
 };
-module.exports = { createUser, handleLogin, getUser };
+
+const getAccount = async (req, res) => {
+  return res.status(200).json(req.user);
+};
+
+module.exports = { createUser, handleLogin, getUser, getAccount };
